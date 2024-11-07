@@ -1,10 +1,11 @@
-const functions = require("firebase-functions");
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World from Firebase Functions!");
-});
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-// Exporta o app como uma function
-exports.app = functions.https.onRequest(app);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
